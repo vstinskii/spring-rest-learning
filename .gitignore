@@ -1,0 +1,6 @@
+# Project exclude paths
+/target/
+/.idea/
+/META-INF/
+spring-rest-learning.iml
+/src/test/
