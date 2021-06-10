@@ -1,4 +1,4 @@
-package com.company.model;
+package com.company.control;
 
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;

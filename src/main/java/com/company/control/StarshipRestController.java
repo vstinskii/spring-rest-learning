@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/")
-public class StarshipController {
+public class StarshipRestController {
 
     @GetMapping("/ship")
     public String getModelShip() {
