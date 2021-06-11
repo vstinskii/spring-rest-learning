@@ -1,10 +1,9 @@
 package com.company.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import org.springframework.stereotype.Component;
 
 import java.util.Arrays;
 
-@JsonIgnoreProperties(ignoreUnknown = true)
 public class Starship {
 
     private int id;
