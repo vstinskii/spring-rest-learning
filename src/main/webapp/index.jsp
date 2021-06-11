@@ -12,5 +12,9 @@
 </head>
 <body>
 Spring REST
+<br><br>
+<a href="${pageContext.request.contextPath}/ships">Get starships</a>
+<br><br>
+<a href="${pageContext.request.contextPath}/ships/get-ship-by-id/1">Get starship by id</a>
 </body>
 </html>
