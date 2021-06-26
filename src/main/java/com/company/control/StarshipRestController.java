@@ -28,9 +28,6 @@ public class StarshipRestController {
         return "A441";
     }
 
-
-
-
     @GetMapping("/ships")
     public List<Starship> getStarships() {
 

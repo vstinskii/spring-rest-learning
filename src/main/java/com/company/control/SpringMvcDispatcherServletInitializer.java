@@ -3,6 +3,7 @@ package com.company.control;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
 public class SpringMvcDispatcherServletInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {
+
     protected Class<?>[] getRootConfigClasses() {
         return null;
     }
