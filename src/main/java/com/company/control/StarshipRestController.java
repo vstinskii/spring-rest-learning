@@ -58,4 +58,20 @@ public class StarshipRestController {
 
         return new ResponseEntity<>(stackTrace, HttpStatus.NOT_FOUND);
     }
+
+    @ExceptionHandler
+    public ResponseEntity<StarshipNotFoundStackTrace> handleException(Exception exc) {
+
+        StarshipNotFoundStackTrace stackTrace = new StarshipNotFoundStackTrace();
+
+        String message = String.valueOf(exc.getCause());
+
+        message = message.substring(33);
+
+        stackTrace.setStatus(HttpStatus.BAD_REQUEST.value());
+        stackTrace.setMessage("Starship id not found - " + message);
+        stackTrace.setTimeStamp(System.currentTimeMillis());
+
+        return new ResponseEntity<>(stackTrace, HttpStatus.NOT_FOUND);
+    }
 }
