@@ -1,6 +1,10 @@
 package com.company.control;
 
 import com.company.model.Starship;
+import com.company.model.exceptions.StarshipNotFoundException;
+import com.company.model.exceptions.StarshipNotFoundStackTrace;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.PostConstruct;
@@ -37,6 +41,21 @@ public class StarshipRestController {
     @RequestMapping("/ships/get-ship-by-id/{starshipId}")
     public Starship getStarshipById(@PathVariable int starshipId) {
 
+        if (starshipId >= starships.size() || starshipId < 0) {
+            throw new StarshipNotFoundException("Starship is not found - " + starshipId);
+        }
         return starships.get(starshipId);
+    }
+
+    @ExceptionHandler
+    public ResponseEntity<StarshipNotFoundStackTrace> handleException(StarshipNotFoundException exc) {
+
+        StarshipNotFoundStackTrace stackTrace = new StarshipNotFoundStackTrace();
+
+        stackTrace.setStatus(HttpStatus.NOT_FOUND.value());
+        stackTrace.setMessage(exc.getMessage());
+        stackTrace.setTimeStamp(System.currentTimeMillis());
+
+        return new ResponseEntity<>(stackTrace, HttpStatus.NOT_FOUND);
     }
 }
