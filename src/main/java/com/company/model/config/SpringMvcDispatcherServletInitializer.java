@@ -1,4 +1,4 @@
-package com.company.control;
+package com.company.model.config;
 
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
