@@ -6,6 +6,15 @@ public class StarshipNotFoundStackTrace {
     private String message;
     private long timeStamp;
 
+    public StarshipNotFoundStackTrace() {
+    }
+
+    public StarshipNotFoundStackTrace(int status, String message, long timeStamp) {
+        this.status = status;
+        this.message = message;
+        this.timeStamp = timeStamp;
+    }
+
     public int getStatus() {
         return status;
     }
