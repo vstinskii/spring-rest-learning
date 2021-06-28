@@ -38,7 +38,7 @@ public class StarshipRestController {
         return starships;
     }
 
-    @RequestMapping("/ships/get-ship-by-id/{starshipId}")
+    @RequestMapping("/ships/{starshipId}")
     public Starship getStarshipById(@PathVariable int starshipId) {
 
         if (starshipId >= starships.size() || starshipId < 0) {
